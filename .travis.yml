@@ -8,4 +8,5 @@ rvm:
 gemfile:
   - gemfiles/Gemfile.rails3_0
   - gemfiles/Gemfile.rails3_1
-script: "bundle exec rake spec_ci"
+script: "export DISPLAY=:99.0 && bundle exec rake spec"
+before_script: "sh -e /etc/init.d/xvfb start"
