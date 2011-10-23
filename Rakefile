@@ -8,9 +8,17 @@ begin
   RSpec::Core::RakeTask.new do |t|
     t.verbose = false
   end
+  
+  desc "Run RSpec for CI server"
+  RSpec::Core::RakeTask.new(:spec_ci) do |t|
+    t.verbose = false
+    t.pattern = './spec/nested_form/**/*_spec.rb'
+  end
 rescue LoadError
   puts "You should run rake spec:install in order to install all corresponding gems!"
 end
+
+
 
 task :default => :spec
 namespace :spec do
