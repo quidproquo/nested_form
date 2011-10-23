@@ -9,8 +9,7 @@
 #   - gemfiles/Gemfile.rails3_0
 #   - gemfiles/Gemfile.rails3_1
 env:
-  - JRUBY_OPTS=”--server”
-
+  - JRUBY_OPTS="--server"
 rvm:
   - 1.9.2
   - jruby
