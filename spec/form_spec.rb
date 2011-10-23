@@ -4,8 +4,6 @@ describe 'NestedForm' do
   include Capybara::DSL
   
   def check_form
-    puts page.body
-    
     page.should have_no_css('form .fields input[id$=name]')
     click_link 'Add new task'
     page.should have_css('form .fields input[id$=name]', :count => 1)
