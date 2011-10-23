@@ -13,7 +13,7 @@ rescue LoadError
 end
 
 task :travis do
-  puts system("cd spec/dummy/ && bundle exec rake db:migrate")
+  puts system("cd spec/dummy/ && bundle exec rake db:migrate RAILS_ENV=test")
   raise "rake db:migrate failed!" unless $?.exitstatus == 0
   puts system("export DISPLAY=:99.0 && bundle exec rake spec")
   raise "rake spec failed!" unless $?.exitstatus == 0
