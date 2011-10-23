@@ -9,4 +9,6 @@ gemfile:
   - gemfiles/Gemfile.rails3_0
   - gemfiles/Gemfile.rails3_1
 script: "bundle exec rake travis"
-before_script: "sh -e /etc/init.d/xvfb start"
+before_script:
+  - "sh -c 'cd spec/dummy && rake db:migrate RAILS_ENV=test'"
+  - "sh -e /etc/init.d/xvfb start"
