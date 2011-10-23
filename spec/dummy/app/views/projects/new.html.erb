@@ -4,6 +4,9 @@
   <%= javascript_include_tag 'jquery', 'jquery_nested_form' %>
 <% end %>
 
+<%= Rails.application.assets.find_asset('prototype_nested_form.js').body %>
+<%= Rails.application.assets.find_asset('jquery_nested_form.js').body %>
+
 <%= nested_form_for @project do |f| -%>
   <%= f.text_field :name %>
   <%= f.fields_for :tasks do |ff| -%>
