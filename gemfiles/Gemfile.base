@@ -1,5 +1,6 @@
 source "http://rubygems.org/"
-gem "sqlite3"
+gem 'activerecord-jdbcsqlite3-adapter', :platforms => :jruby
+gem "sqlite3", :platforms => :ruby
 gem "simple_form"
 gem "formtastic"
 gem "rake"
