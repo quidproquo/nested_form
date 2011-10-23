@@ -13,7 +13,6 @@ rescue LoadError
 end
 
 task :travis do
-  p ENV
   puts system("export DISPLAY=:99.0 && bundle exec rake spec")
   raise "rake spec failed!" unless $?.exitstatus == 0
 end
