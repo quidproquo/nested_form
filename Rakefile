@@ -12,12 +12,8 @@ rescue LoadError
   puts "You should run rake spec:install in order to install all corresponding gems!"
 end
 
-task :travis do
-  puts system("export DISPLAY=:99.0 && bundle exec rake spec")
-  raise "rake spec failed!" unless $?.exitstatus == 0
-end
-
 task :default => :spec
+
 namespace :spec do
   task :install do
     puts `bundle install --gemfile=gemfiles/Gemfile.rails3_0`
