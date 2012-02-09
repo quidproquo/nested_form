@@ -1,3 +1,7 @@
+0.0.3
+
+Added id (generated from name) to top-level wrapper for cleaner JS manipulation
+
 0.0.2
 
 Added a class on blueprint div so that it is possible for javascript to know if a form field is part of a blueprint or for real in the form.
