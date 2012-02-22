@@ -1,3 +1,11 @@
+0.0.5
+
+JS update (id generation)
+
+0.0.4
+
+Vendor added in gemspec (0.2.0 in Ryanb's)
+
 0.0.3
 
 Added id (generated from name) to top-level wrapper for cleaner JS manipulation

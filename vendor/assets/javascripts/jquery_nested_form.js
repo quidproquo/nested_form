@@ -11,10 +11,15 @@ jQuery(function($) {
       var assoc   = $(link).attr('data-association');            // Name of child
       var content = $('#' + assoc + '_fields_blueprint').html(); // Fields template
 
+      // Make a unique ID for the new child
+      var regexp  = new RegExp('new_' + assoc, 'g');
+      var new_id  = new Date().getTime();
+      content     = content.replace(regexp, "new_" + new_id);
+
       // Make the context correct by replacing new_<parents> with the generated ID
       // of each of the parent objects
       var context = ($(link).closest('.fields').find('input:first').attr('name') || '').replace(new RegExp('\[[a-z]+\]$'), '');
-
+      
       // context will be something like this for a brand new form:
       // project[tasks_attributes][new_1255929127459][assignments_attributes][new_1255929128105]
       // or for an edit form:
@@ -35,11 +40,6 @@ jQuery(function($) {
           }
         }
       }
-
-      // Make a unique ID for the new child
-      var regexp  = new RegExp('new_' + assoc, 'g');
-      var new_id  = new Date().getTime();
-      content     = content.replace(regexp, "new_" + new_id);
 
       var field = this.insertFields(content, assoc, link);
       $(link).closest("form")
