@@ -21,11 +21,11 @@ module NestedForm
       end
     end
 
-    def after_nested_form(association, &block)
+    def after_nested_form(blueprint_name, &block)
       @associations ||= []
       @after_nested_form_callbacks ||= []
-      unless @associations.include?(association)
-        @associations << association
+      unless @associations.include?(blueprint_name)
+        @associations << blueprint_name
         @after_nested_form_callbacks << block
       end
     end
