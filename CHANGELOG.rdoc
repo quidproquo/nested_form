@@ -1,3 +1,13 @@
+0.0.6
+
+Index blueprint by full name instead of just association name. 
+This was a design flaw: 
+A -> B
+A -> C
+B -> D
+C -> D
+When editing A, adding a D in C, B's D would show up instead, with name pointing to B.
+
 0.0.5
 
 JS update (id generation)
