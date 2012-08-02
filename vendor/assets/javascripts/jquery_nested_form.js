@@ -19,6 +19,9 @@ jQuery(function($) {
       // Make the context correct by replacing new_<parents> with the generated ID
       // of each of the parent objects
       var context = ($(link).closest('.fields').find('input:first').attr('name') || '').replace(new RegExp('\[[a-z]+\]$'), '');
+
+      // The only way to get nested forms to work in app (outside of rails_admin)
+      context = null;
       
       // context will be something like this for a brand new form:
       // project[tasks_attributes][new_1255929127459][assignments_attributes][new_1255929128105]
